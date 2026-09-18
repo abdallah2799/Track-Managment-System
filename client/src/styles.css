@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #212529;
+}
+
+/* Shared across track-list and track-detail so a given status always
+   looks the same regardless of which view it's rendered in. */
+.status-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.status-badge[data-status='Draft'] {
+  background-color: #eeeeee;
+  color: #555555;
+}
+
+.status-badge[data-status='Pending'] {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-badge[data-status='Submitted'] {
+  background-color: #cfe2ff;
+  color: #084298;
+}
+
+.status-badge[data-status='Distributed'],
+.status-badge[data-status='Live'] {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge[data-status='Rejected'] {
+  background-color: #f8d7da;
+  color: #721c24;
+}
