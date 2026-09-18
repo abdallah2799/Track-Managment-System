@@ -1,3 +1,7 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { TrackList } from './features/track-list/track-list';
+
+export const routes: Routes = [
+  { path: '', component: TrackList },
+];

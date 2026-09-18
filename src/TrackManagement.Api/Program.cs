@@ -11,7 +11,17 @@ using TrackManagement.Infrastructure.Auth;
 using TrackManagement.Infrastructure.Persistence;
 using TrackManagement.Infrastructure.Persistence.Seed;
 
+const string AngularDevCorsPolicy = "AngularDev";
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(AngularDevCorsPolicy, policy =>
+        policy.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
 
 builder.Services.AddControllers()
     .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
@@ -76,6 +86,8 @@ app.UseSwaggerUI();
 app.UseExceptionHandler();
 
 app.UseHttpsRedirection();
+
+app.UseCors(AngularDevCorsPolicy);
 
 app.UseAuthentication();
 app.UseAuthorization();
