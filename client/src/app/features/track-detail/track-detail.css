@@ -1,0 +1,58 @@
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  row-gap: 8px;
+  column-gap: 12px;
+  margin-bottom: 8px;
+}
+
+.details dt {
+  font-weight: 600;
+  color: #555;
+}
+
+.details dd {
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.error {
+  color: #b00020;
+}
