@@ -9,6 +9,7 @@ public class TrackManagementDbContext(DbContextOptions<TrackManagementDbContext>
     public DbSet<Track> Tracks => Set<Track>();
     public DbSet<Dsp> Dsps => Set<Dsp>();
     public DbSet<TrackDistribution> TrackDistributions => Set<TrackDistribution>();
+    public DbSet<AppUser> AppUsers => Set<AppUser>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
