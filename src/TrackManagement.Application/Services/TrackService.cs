@@ -89,11 +89,11 @@ public class TrackService(
 
         if (newDistributions.Count > 0)
         {
+            // EF Core's change-tracker fixup already adds these into the already-loaded
+            // track.Distributions collection once tracked, since Track and TrackDistribution
+            // are related via TrackId. Adding them again here would duplicate the in-memory
+            // list (and therefore the response), even though only one row is ever persisted.
             await trackDistributionRepository.AddRangeAsync(newDistributions, cancellationToken);
-            foreach (var distribution in newDistributions)
-            {
-                track.Distributions.Add(distribution);
-            }
         }
 
         if (track.Status == TrackStatus.Draft)
